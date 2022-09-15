@@ -1,0 +1,29 @@
+
+
+/*let name = "zaba";
+
+function one(letter, numbers) {
+    
+
+
+}*/
+
+let numb = [1,2,1,3];
+let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+let names = 'daba'.split('');
+let array = [];
+
+for(let i=0; i<=alpha.length-1; i++) {
+    
+    //console.log(names.indexOf[i])
+
+}
+
+
+/*const one = alpha.indexOf('d');
+const two = alpha.indexOf('a');
+const three = alpha.indexOf('b');*/
+
+
+
