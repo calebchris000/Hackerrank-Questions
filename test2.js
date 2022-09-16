@@ -1,19 +1,27 @@
 
 
+function multipleofFive(n) {
+    let result = Math.ceil(n / 5) * 5;
+    return result;
+}
 
-function saveThePrisoners(n, m, s) {
+let array = [];
+let indices = [];
 
-    if(m <= n) {
-        let result = (m-1) + s;
-        console.log(result)
-    }
+let others = [];
+function studentGrades(grades) {
+    let newArray = [...grades];
 
-    else if(m>= n){
-        let result = m - ((n-s) +1);
+    for(value of newArray) {
+        if((multipleofFive(value) - value) < 3 && value>=38) {
+            array.push(value);
+            indices.push(newArray.indexOf(value));
+        }
         
     }
-    (m>=n ==0) ? console.log(n) : console.log % n;
+ console.log(array)
+ console.log(indices)
 
 }
 
-saveThePrisoners(208526924, 756265725, 150817879);
+studentGrades([73, 67, 38, 33, 67, 38]);

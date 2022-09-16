@@ -2,31 +2,31 @@
 function gradingStudent(array) {
 
     let dump = [];
+    let lower = [];
 
-    for (let i = 0; i < array.length; i++) {
+    for(let i=0; i<array.length; i++) {
 
+        let result = Math.ceil(array[i] / 5) * 5;
 
-        let ana = Math.ceil(array[i] / 5) * 5;
+        dump.push(result)
+    }
 
-    let check = dump[i] - array[i];
-    dump.push(ana);
-    if (dump[i] <= 3) {
+    for(let i=0; i<dump.length; i++) {
+        if((dump[i] % array[i]) == 2 && dump[i] >= 40) {
+            lower.push(dump[i]);
+        }
+        else {
+            let here = array[i];
+            lower.splice(dump.indexOf(dump[i]), 1, here);
+
+        }
        
-        console.log(dump)
     }
-
-    }
-
+    console.log(lower);
+    
    
-
-    /*for(let i=0; i<dump.length; i++) {
-    
-        
-    
-        
-    }
-    */
-
 }
 
 gradingStudent([73, 67, 38, 33]);
+
+//[75, 67, 40, 33]
