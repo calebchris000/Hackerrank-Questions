@@ -1,5 +1,10 @@
-let a = [1,2,3,4,5,5,5];
+var arr = [2,2,3,3,7,3];
 
-let num = [];
-num.push(a.indexOf(5));
-console.log(num)
+var indices = [];
+
+arr.filter(function(yourArray, index) {
+ if(yourArray == 3){
+   indices.push(index)
+ }
+});
+console.log(indices)
