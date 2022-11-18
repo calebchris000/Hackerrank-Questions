@@ -1,28 +1,17 @@
 
 
+let two = 2;
 
+let array = [2,3,6,7,8,9];
+let dis = []
 
-function utopianTree(n) {
-    let height = 1;
-    let output = [height];
-    let number = 1;
-          
-    for(i=number; i<=n; i++) {
+ let res  = array.map(x => x % two);
 
-      height *= 2;
-      output.push(height);
-      i++;
-
-      if(i <= n ) {
-
-      height +=1;
-      output.push(height);
-
-      }
-      
-    }
-    console.log(output)
-
+ let here = res.every(function(e) {
+  if (e == 0) {
+    dis.push(array.indexOf(e))
   }
+  return dis;
+ })
 
-utopianTree(3);
+ console.log(dis)

@@ -1,5 +1,12 @@
-function mam (arr) {
-    console.log(arr)
+
+
+let string = ['a','b','c'];
+let aas = ''
+
+for(each of string){
+  aas = aas.concat(each)
 }
 
-mam([1,2])
+console.log(aas)
+
+

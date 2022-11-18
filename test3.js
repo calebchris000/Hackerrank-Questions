@@ -1,6 +1,10 @@
 
-arr1 = [1,2,3,4,5,6]
 
-arr1 = arr1.concat(arr1.splice(0,2)); // shift left by 2
 
-console.log(arr1)
+let array = [1,1,2,2,3,3,3];
+
+let count = []
+
+array.forEach(x => count[x] ? count[x]++ : count[x] = 1)
+
+console.log(count[1])

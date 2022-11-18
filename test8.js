@@ -1,48 +1,58 @@
 
-function gradingStudent(array) {
-
-    let dump = [];
-    let lower = [];
-    let index = [];
-
-    for(let i=0; i<array.length; i++) {
-
-        let result = Math.ceil(array[i] / 5) * 5;
-
-        dump.push(result)
+console.time()
+function countAppleAndOrange(s, t, a, b, apples, oranges) {
+    //s and t are the house size
+    let houseArray=[];
+   for(let i=s; i<= t; i++) {
+        houseArray.push(i)
     }
 
-    for(let i=0; i<dump.length; i++) {
+    //a and b are apples and oranges respectively
+    let appleArray=[];
+    for(let j=0; j<apples.length; j++) {     
+        appleArray.push(apples[j] + a);
+    }
 
+    
+    let orangeArray=[];
+    for(let k =0; k<=oranges.length; k++) {
+        orangeArray.push(oranges[k] + b);
+    }
 
-
-        if((dump[i] % array[i]) == 2 && dump[i] >= 38) {
-
-
-
-            lower.push(dump[i]);
-        }
-        else if(dump[i] % array[i] >=3){
-            let here = array[i];
-            lower.splice(dump.indexOf(dump[i]), 1, here);
-           
-        }
-        else {
-
-        array.filter(function(theArray, indexe){
-            if(theArray == array[i]) {
-                index.push(indexe)
+    //check distance of fruit from the house measurment
+    let output = 0;
+    let output2 = 0;
+    
+    let m=0;
+    while(m<houseArray.length-1) {
+        let n=0;
+        while(n<appleArray.length-1) {
+            if(houseArray[m] == appleArray[n]) {
+                output+=1;
+                
             }
-        })
+             n++;
         }
-       
+
+        let p=0;
+        while(p<orangeArray.length-1) {
+            if(houseArray[m] == orangeArray[p]) {
+                output2+=1
+            }
+            p++
+        }
+
+       m++;
     }
 
-   
-    console.log(lower);
-    console.log(index)
+
+
+    console.log(`${output}\n${output2}`)
 }
 
-gradingStudent([73, 67, 38, 33, 67, 38, 38, 67]);
+countAppleAndOrange(7, 11, 5, 15, [-2, 2, 1], [5, -6])
+console.timeEnd()
 
-//[75, 67, 40, 33]
+   
+
+

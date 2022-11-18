@@ -1,45 +1,29 @@
+function twoSets(a, b) {
 
+  let lastOne = parseInt(a.slice(-1));
+  let lastTwo = parseInt(b.slice(-1));
+  let between = [];
 
-function multipleofFive(n) {
-    let result = Math.ceil(n / 5) * 5;
-    return result;
-}
-let test = [];
+  for (let j = lastOne; j <= lastTwo; j++) {
 
-let array = [];
-let indices = [];
-let others = [];
-
-let dump = [];
-function studentGrades(grades) {
-    let newArray = [...grades];
-
-    newArray.filter(function(theArray, index){
-        if(theArray == 67) {
-            test.push(index)
-        }
-    })
-    console.log(test)
-
-    for(value of newArray) {
-
-       if((multipleofFive(value) - value) < 3 && value >=38) {
-        let here = value;
-        array.push(multipleofFive(here));
-        
-       }
-       else if((multipleofFive(value) - value) >= 3 && value >=38) {
-        let here2 = value;
-        indices.push(value)
-       }
-       else {
-        let here3 = value;
-        others.push(here3)
-       }
-        
+    if ((a.map(x => j % x))[0] == 0 && (a.map(x => j % x))[1] == 0) {
+      between.push(j);
+    }
   }
-console.log(array);
-console.log(indices);
-console.log(others)
+
+  let between2 = []
+  for (let k = 0; k < between.length; k++) {
+
+    if (b.map(x => x % between[k])[0] == 0 && b.map(x => x % between[k])[1] == 0) {
+      between2.push(between[k]);
+    }
+  }
+
+  console.log(between);
+  console.log(between2)
+  console.log(between2.length);
+
 }
-studentGrades([73, 67, 38, 33, 67, 38]);
+
+
+twoSets([2, 6], [24, 36])

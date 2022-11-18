@@ -18,7 +18,7 @@ function gradingStudent(array) {
         else {
             let here = array[i];
             lower.splice(dump.indexOf(dump[i]), 1, here);
-            index.indexOf(dump[i])
+            array.indexOf(dump[i])
            
         }
        
