@@ -1,23 +1,30 @@
 
 
-function climbingTheLeaderBoard(ranks, scores){
-   let ranksAll = [...new Set(ranks)];
-   console.log(ranksAll)
+function chocolateFeast(n, c, m) {
+  //Amount of chocolate eaten
+  var count = [];
 
-   let position = [];
+  //First purchase of chocolate
+  var initialPurchaseValue = n / c;
+  count.push(initialPurchaseValue);
 
-   for(let i=0; i<scores.length; i++){
-      position.push(ranks.filter(x=>x>=scores[i]).length+1)
-   }
-   console.log(position)
+  for (var i = 0; i < c; i++) {
+      //Amount of chocolate derivable from wrappers
+      var newChocolateBars = Math.floor(initialPurchaseValue / m);
+      count.push(newChocolateBars);
+      //Remainder of the wrapper
+      var remainder = initialPurchaseValue % m;
+      var wrapper = newChocolateBars + remainder;
+      initialPurchaseValue = wrapper;
+  }
+  return Math.floor(count.reduce(function (acc, val) { return acc + val; }));
 }
+//chocolateFeast(9266, 90, 5262)
 
-climbingTheLeaderBoard([100,90,80,80,70], [50, 75, 95, 120]);
 
-let arr = [100,90,80,80,70];
-let bar = [50, 50, 95, 120]
-
-// console.log(arr.some(x=>x>2))
-
-console.log(arr.filter(x=>x>=75))
-
+for (let i = 0; i < 5; i++) {
+ 
+  test('chocolateFeast', () => {
+    expect(chocolateFeast(54285, 507, 46209)).toBe(107);
+  });
+}

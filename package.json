@@ -1,0 +1,26 @@
+{
+  "name": "importmodules",
+  "version": "1.0.0",
+  "description": "customModules",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modules"
+  ],
+  "author": "Caleb Nwaizu",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "compute-lcm": "^1.1.2",
+    "lcm": "^0.0.3"
+  },
+  "devDependencies": {
+    "@types/lcm": "^0.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+  
+}
